@@ -8,7 +8,7 @@ public class AttackTask implements Task {
 	
 	@Override
 	public boolean activate(Fighter fighter) {
-		if(fighter.getCurrentHealth() >= fighter.getEatHealth()) {
+		if(fighter.getCurrentHealth() >= fighter.getEatHealth() && !fighter.myPlayer().isUnderAttack()) {
 			if(fighter.getTarget() != null) {
 				if(fighter.getTarget().getHealth() == 0
 						|| !fighter.getTarget().exists()
